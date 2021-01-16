@@ -4,6 +4,7 @@
 ### Автор: Галдович Александр
 #### [Go to EN](#english)
 ### Оглавление<a name="оглавление"></a> 
+* [Пара слов о себе](#пара_слов)
 * [Общее описание](#общее_описание)
 * [Пользователи](#пользователи)
 * [Заказчики](#заказчики)
@@ -19,7 +20,8 @@
 ### Study project for the course Java Web Development
 ### Author: Galdovich Alexander
 #### [Перейти на русский](#русский)
-### Table of contents<a name="contents"></a> 
+### Table of contents<a name="contents"></a>
+* [A few words about myself](#few_words)
 * [General description](#description)
 * [Users](#users)
 * [Customers](#customers)
