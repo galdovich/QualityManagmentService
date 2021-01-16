@@ -1,0 +1,82 @@
+.col{
+    max-height: 80px;
+}
+
+.col-form-label {
+    text-align: right;
+}
+
+.mt-0, .my-0 {
+    margin-top: 0!important;
+    margin-right: 20px;
+}
+
+.header_btn {
+    margin-left: 50%;
+}
+
+.btn {
+    margin-left: 4px;
+}
+
+.login-form {
+    width: 700px;
+    margin: auto;
+}
+
+.main-form {
+    width: 700px;
+    margin: auto;
+}
+
+.form-group row {
+    margin-top: 10px;
+}
+
+.invalid-feedback {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+.valid-feedback {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+.form-button {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.form-check {
+    margin-top: 10px;
+}
+
+.label {
+    margin-bottom: 0px;
+}
+
+.form-group {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+
+.body_centre {
+    margin-top: 10%;
+    margin-left: 30%;
+}
+
+
+.input-group {
+    width: 40%;
+}
+
+.client_input {
+    padding-top: 10px;
+    padding-left: 3%;
+    padding-bottom: 10px;
+}
+
+.client_button {
+    padding-top: 20px;
+    padding-left: 15%;
+}
