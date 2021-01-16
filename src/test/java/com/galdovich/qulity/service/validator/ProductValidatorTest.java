@@ -1,10 +1,11 @@
 package com.galdovich.qulity.service.validator;
 
-import com.galdovich.qulity.entity.Customer;
-import com.galdovich.qulity.entity.Order;
-import com.galdovich.qulity.entity.Priority;
-import com.galdovich.qulity.util.ParameterKey;
-import com.galdovich.qulity.util.UploadType;
+import com.galdovich.qaulity.entity.Customer;
+import com.galdovich.qaulity.entity.Order;
+import com.galdovich.qaulity.entity.Priority;
+import com.galdovich.qaulity.service.validator.ProductValidator;
+import com.galdovich.qaulity.util.ParameterKey;
+import com.galdovich.qaulity.util.UploadType;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;

@@ -15,7 +15,7 @@
     <!--    Upload servlet    -->
     <servlet>
         <servlet-name>Upload</servlet-name>
-        <servlet-class>com.galdovich.qulity.controller.FileUploadingServlet</servlet-class>
+        <servlet-class>com.galdovich.qaulity.controller.FileUploadingServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Upload</servlet-name>

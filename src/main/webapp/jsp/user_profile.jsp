@@ -44,10 +44,10 @@
                                 <h4>${user_full_name}</h4>
                                 <p class="text-secondary mb-1">Full Stack Developer</p>
                                 <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-                             <%--   <form action="upload" enctype="multipart/form-data" method="POST">
-                                    Upload File: <input type="file" name="content" height="130">
-                                    <input type="submit" value="Upload File">
-                                </form>--%>
+                                <%--   <form action="upload" enctype="multipart/form-data" method="POST">
+                                       Upload File: <input type="file" name="content" height="130">
+                                       <input type="submit" value="Upload File">
+                                   </form>--%>
                             </div>
                         </div>
                     </div>
@@ -131,7 +131,7 @@
                                     <h6 class="mb-0"><fmt:message key="profile.full_name"/></h6>
                                 </div>
                                 <input class="col-sm-8 form-control" type="text" name="name" id="name"
-                                        value="${user_name}">
+                                       value="${user_name}">
                             </div>
                             <div class="text-danger text-center">
                                 ${editData['name_message']}
@@ -182,65 +182,71 @@
                             </div>
                             <hr>
                             <div class="row justify-content-center">
-                                <div class="col-md-12 text-center">
+                                <c:if test="${validMessage == true}">
+                                    <div class="col-md-12 text-center text-success">
+                                        <fmt:message key="profile.valid.message"/>
+                                    </div>
+                                </c:if>
 
-                                    <a class="text-success">${validMessage}</a>
+                                <c:if test="${invalidMessage == true}">
+                                    <div class="col-md-12 text-center text-danger">
+                                        <fmt:message key="profile.invalid.message"/>
+                                    </div>
+                                </c:if>
 
-                                    <a class="text-danger">${invalidMessage}</a>
-
-                                </div>
                                 <hr>
                                 <c:if test="${user_role == 'ADMIN'}">
                                     <div class="col-md-5 text-center">
-                                        <button type="submit" class="btn btn-sm btn-primary"><fmt:message key="profile.save.button"/></button>
+                                        <button type="submit" class="btn btn-sm btn-primary"><fmt:message
+                                                key="profile.save.button"/></button>
                                     </div>
                                 </c:if>
                             </div>
                         </div>
                     </form>
                 </div>
-                        <div class="card col-md-12 p-0">
+                <div class="card col-md-12 p-0">
 
-                            <div class="card-header text-center" style="height: 40px">
-                                <h5>Информация</h5>
-                            </div>
-                            <div class="card-body">
+                    <div class="card-header text-center" style="height: 40px">
+                        <h5>Информация</h5>
+                    </div>
+                    <div class="card-body">
 
-                            </div>
-                        </div>
-                   <%-- <div class="col-sm-6 mb-3">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Project
-                                    Status</h6>
-                                <small>Web Design</small>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 80%"
-                                         aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small>Website Markup</small>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 72%"
-                                         aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small>One Page</small>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 89%"
-                                         aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small>Mobile Template</small>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 55%"
-                                         aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small>Backend API</small>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 66%"
-                                         aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>--%>
+                    </div>
+                </div>
+                <%-- <div class="col-sm-6 mb-3">
+                     <div class="card h-100">
+                         <div class="card-body">
+                             <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Project
+                                 Status</h6>
+                             <small>Web Design</small>
+                             <div class="progress mb-3" style="height: 5px">
+                                 <div class="progress-bar bg-primary" role="progressbar" style="width: 80%"
+                                      aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                             </div>
+                             <small>Website Markup</small>
+                             <div class="progress mb-3" style="height: 5px">
+                                 <div class="progress-bar bg-primary" role="progressbar" style="width: 72%"
+                                      aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+                             </div>
+                             <small>One Page</small>
+                             <div class="progress mb-3" style="height: 5px">
+                                 <div class="progress-bar bg-primary" role="progressbar" style="width: 89%"
+                                      aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
+                             </div>
+                             <small>Mobile Template</small>
+                             <div class="progress mb-3" style="height: 5px">
+                                 <div class="progress-bar bg-primary" role="progressbar" style="width: 55%"
+                                      aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                             </div>
+                             <small>Backend API</small>
+                             <div class="progress mb-3" style="height: 5px">
+                                 <div class="progress-bar bg-primary" role="progressbar" style="width: 66%"
+                                      aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>--%>
             </div>
         </div>
     </div>

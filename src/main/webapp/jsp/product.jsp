@@ -34,7 +34,7 @@
                     </div>
                     <!-- product form -->
                     <form class="profile-form" name="productForm" method="POST" action="controller">
-                        <input type="hidden" name="command" value="update_product"/>
+                        <input type="hidden" name="command" value="edit_product"/>
 
                         <div class="card-body p-0 pr-2 pl-2">
                             <div class="row mt-2">
@@ -99,9 +99,17 @@
                                     <h6 class="mb-0">Состояние</h6>
                                 </div>
                                 <div class="col-sm-7 pl-0">
-                                    <div class="form-control text-center alert-warning border border-warning">
-                                        Выполнение!
-                                    </div>
+                                    <c:if test="${state == true}">
+                                        <div class="form-control text-center alert-success border border-success">
+                                            Выполнено!
+                                        </div>
+                                    </c:if>
+                                    <c:if test="${empty state}">
+                                        <div class="form-control text-center alert-warning border border-warning">
+                                            Выполнение!
+                                        </div>
+                                    </c:if>
+
                                 </div>
                             </div>
                             <hr>
@@ -152,7 +160,7 @@
                                                value="${product_priority}" readonly>
                                     </c:if>
                                     <c:if test="${user_role == 'ADMIN'}">
-                                        <select name="product_amount" class="custom-select" style="text-align-last: center"
+                                        <select name="product_priority" class="custom-select" style="text-align-last: center"
                                                 array="priorityList">
                                             <option
                                                     <c:if test="${product_priority == 'A'}"> selected </c:if> >
@@ -169,6 +177,23 @@
                                 </div>
                             </div>
                             <div class="row">
+                                <c:if test="${success_adding == true}">
+                                    <div class="col-md-12 text-center text-success mt-2">
+                                        <fmt:message key="product.valid_message"/>
+                                    </div>
+                                </c:if>
+
+                                <c:if test="${fail_adding == true}">
+                                    <div class="col-md-12 text-center text-danger mt-2">
+                                        <fmt:message key="product.invalid_message"/>
+                                    </div>
+                                </c:if>
+
+                                <c:if test="${same_values == true}">
+                                    <div class="col-md-12 text-center text-danger mt-2">
+                                        <fmt:message key="product.same_values_message"/>
+                                    </div>
+                                </c:if>
                                 <div class="col-sm-12 pr-0 mt-3 mb-3 text-center">
                                     <c:if test="${user_role == 'ADMIN'}">
                                         <button type="submit" class="btn btn-sm btn-dark">Обновить</button>

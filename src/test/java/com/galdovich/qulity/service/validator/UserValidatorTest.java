@@ -1,7 +1,8 @@
 package com.galdovich.qulity.service.validator;
 
-import com.galdovich.qulity.entity.Department;
-import com.galdovich.qulity.util.ParameterKey;
+import com.galdovich.qaulity.entity.Department;
+import com.galdovich.qaulity.service.validator.UserValidator;
+import com.galdovich.qaulity.util.ParameterKey;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 

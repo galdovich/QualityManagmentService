@@ -9,7 +9,7 @@
     <uri>customtags</uri>
     <tag>
         <name>pagination</name>
-        <tag-class>com.galdovich.qulity.tag.Pagination</tag-class>
+        <tag-class>com.galdovich.qaulity.tag.Pagination</tag-class>
         <body-content>empty</body-content>
     </tag>
 </taglib>

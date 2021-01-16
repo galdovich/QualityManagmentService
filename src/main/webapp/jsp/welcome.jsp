@@ -28,7 +28,7 @@
                 </tr>
             </thread>
             <tbody>
-            <c:forEach items="${customerList}" var="customer">
+            <c:forEach items="${customer_list}" var="customer">
                 <tr>
                     <td>${customer.name}</td>
                     <td>${customer.phone}</td>

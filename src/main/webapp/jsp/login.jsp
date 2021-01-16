@@ -38,11 +38,12 @@
                     <div class="col-md-6">
                         <input type="password" id="password" class="form-control" name="password" required
                                placeholder="<fmt:message key="login.password.placeholder"/>"><br>
-                        <c:if test="${not empty errorLoginPassMessage}">
+                        <c:if test="${errorLoginPassMessage == true}">
                             <div class="text-danger">
-                                <fmt:message key="${errorLoginPassMessage}"/>
-                            </div><hr>
+                                <fmt:message key="message.login_error"/>
+                            </div>
                         </c:if>
+                        <hr>
                     </div>
                 </div>
 

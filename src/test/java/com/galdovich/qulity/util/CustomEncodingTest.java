@@ -1,5 +1,6 @@
 package com.galdovich.qulity.util;
 
+import com.galdovich.qaulity.util.CustomEncoding;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;

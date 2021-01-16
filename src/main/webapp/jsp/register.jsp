@@ -123,9 +123,22 @@
         <div class="form-button row justify-content-center">
             <button type="submit" class="btn btn-outline-primary"><fmt:message key="register.button"/></button>
         </div>
-        <div class="text-success text-center">
-            ${register_data['user_message']}
-        </div>
+
+        <c:if test="${user_success_flag == true}">
+            <div class="text-success text-center">
+                    <fmt:message key="register.valid_message"/>
+            </div>
+        </c:if>
+        <c:if test="${user_fail_flag == true}">
+            <div class="text-danger text-center">
+                <fmt:message key="register.invalid_message"/>
+            </div>
+        </c:if>
+        <c:if test="${user_same_login == true}">
+            <div class="text-danger text-center">
+                <fmt:message key="register.same_login"/>
+            </div>
+        </c:if>
 
     </form>
 
