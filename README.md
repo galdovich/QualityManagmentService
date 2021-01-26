@@ -81,10 +81,10 @@ I work as the head of the technical control department for a private company tha
 * **Admin**  
   The administrator has full access to the system. These rights are given to workers with duties such as creating orders and designing a 3D model of products. The director and department heads also have "Administrator" access rights to maintain feedback in production.
   
-   Functionality:
-      * View, add, change users
-      * View, add, change products
-      
+  Functionality:
+     * View, add, change users
+     * View, add, change products
+ 
 ### Customers<a name="users"></a> 
     
     
