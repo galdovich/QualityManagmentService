@@ -62,25 +62,25 @@ I work as the head of the technical control department for a private company tha
 * **Guest**  
   Unauthorized user.
     
-  Функциональные возможности:
-    * Просмотр домашней страницы
-    * Просмотр актуальных рейсов
-    * Просмотр аэропортов, в которые выполняются рейсы
-    * Просмотр парка авиации
+  Functionality:
+     * View home page
+     * View current flights
+     * View the airports to which there are flights
+     * View aircraft fleet
   
 * **Worker** 
-  Зарегистрированный рабочий в системе. Статус присваивается по умолчанию после регистрации.
+  The registered worker in the system. The status is assigned by default after registration.
   
-  Функциональные возможности:
-    * Просмотр домашней страницы
-    * Просмотр актуальных рейсов
-    * Просмотр аэропортов, в которые выполняются рейсы
-    * Просмотр парка авиации
+  Functionality:
+     * View home page
+     * View current flights
+     * View the airports to which there are flights
+     * View aircraft fleet
     
     
 * **Admin**  
-  Администратор имеет полный доступ к системе. Этими правами наделяются рабочие имеющие такие обязанности как создание заказов и проектирование 3д модели изделий. Директор и начальники отделов также имееют права доступа "Администратор" для поддержания обратной связи на производстве.  
+  The administrator has full access to the system. These rights are given to workers with duties such as creating orders and designing a 3D model of products. The director and department heads also have "Administrator" access rights to maintain feedback in production.
   
-  Функциональные возможности:
-   * Просмотр, добавление, изменение пользователей
-   * Просмотр, добавление, изменение изделий
+ Functionality:
+    * View, add, change users
+    * View, add, change products
