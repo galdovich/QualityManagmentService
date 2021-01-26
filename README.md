@@ -68,7 +68,7 @@ I work as the head of the technical control department for a private company tha
      * View the airports to which there are flights
      * View aircraft fleet
   
-* **Worker** 
+* **Worker**
   The registered worker in the system. The status is assigned by default after registration.
   
   Functionality:
