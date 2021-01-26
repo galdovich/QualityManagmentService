@@ -1,4 +1,4 @@
-Система менеджмента качества на предприятии ООО "ОЛМИСЕРВИС"
+Система менеджмента качества на предприятии<a name="русский"></a>
 ---
 ### Учебный проект по курсу Java Web Development
 ### Автор: Галдович Александр
@@ -40,7 +40,7 @@
    * Просмотр, добавление, изменение пользователей
    * Просмотр, добавление, изменение изделий
 
-## Quality System Managment ООО "ОЛМИСЕРВИС"<a name="english"></a>
+## Quality System Managment<a name="english"></a>
 ---
 ### Study project for the course Java Web Development
 ### Author: Galdovich Alexander
