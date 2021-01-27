@@ -7,7 +7,7 @@
 * [Пара слов о себе](#пара_слов)
 * [Общее описание](#общее_описание)
 * [Пользователи](#пользователи)
-* [Заказчики](#заказчики)
+* [Маршрутные карты](#маршрутные_карты)
 * [Заказы](#заказы)
 * [В перспективе](#перспектива)
 
@@ -15,7 +15,7 @@
 Я работаю начальником отдела технического контроля на чатной фирме, которая специализируется на механической обработки материалов. В течение 3-ех лет, которые я отдал фирме, мною постоянно фиксировались недостатки в существующей системе производства, начиная с этапов проектирования изделий и заканчивая обратной связью между процессами производства и директором. Именно по этой причине у меня и родилась идея по созданию системы, которая могла бы усовершенствовать существующую систему производства или даже стать толчком для создания новой! 
 ### Общее описание<a name="общее_описание"></a> 
 
-### Маршрутный карты
+### Маршрутный карты<a name="маршрутные_карты"></a> 
 Маршрутная карта (далее-МК) относится к числу обязательных технологических документов. МК содержит описание последовательности выполнения технологических операций. На нашей фирме это технология работает на формальном уровне (см. картинку ниже). 
 <p align="center">
   <img src="./img/routeMap.jpg" alt="Size Limit CLI" width="510">
@@ -57,9 +57,7 @@
    * Просмотр, добавление, изменение пользователей
    * Просмотр, добавление, изменение изделий
 
-### Заказчики<a name="заказчики"></a> 
-
-### В перспективе 
+### В перспективе<a name="перспектива"></a>
 На производстве существует парк средств измерений, позволяют быстро выполнять измерения в автоматическом режиме, а также обеспечивают удобство работы и передачи данных по беспроводным каналам связи. Результаты измерений, которые выполняются с высокой частотой, передаются по сети напрямую на производственную линию в цех — будь то 100-процентный или выборочный контроль. Планируется интеграция всех средств измерений в одну систему, для быстрого считывания массива данных об измерениях.
 
 
@@ -72,8 +70,8 @@
 * [A few words about myself](#few_words)
 * [General description](#description)
 * [Users](#users)
-* [Customers](#customers)
 * [Orders](#orders)
+* [In perspective](#perspective)
 
 ### A few words about myself<a name="few_words"></a> 
 I work as the head of the technical control department for a private company that specializes in the machining of materials. During the 3 years that I gave to the company, I have constantly fixed shortcomings in the existing production system, starting from the stages of product design and ending with feedback between production processes and the director. It is for this reason that I came up with the idea of ​​creating a system that could improve the existing production system or even become an impetus for creating a new one!
@@ -108,6 +106,6 @@ I work as the head of the technical control department for a private company tha
      * View, add, change users
      * View, add, change products
  
-### Customers<a name="users"></a> 
-    
+### In perspective<a name="perspective"></a> 
+ There is a fleet of measuring instruments at the production site, they allow you to quickly carry out measurements in an automatic mode, and also provide the convenience of operation and data transmission via wireless communication channels. The measurement results, which are carried out at high frequency, are transmitted over the network directly to the production line in the workshop - be it 100% inspection or sampling. It is planned to integrate all measuring instruments into one system for quick reading of an array of measurement data.
     
