@@ -42,6 +42,8 @@
    * Просмотр, добавление, изменение пользователей
    * Просмотр, добавление, изменение изделий
 
+### Заказчики<a name="заказчики"></a> 
+
 ## Quality System Managment<a name="english"></a>
 ---
 ### Study project for the course Java Web Development
