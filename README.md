@@ -72,7 +72,8 @@
 * [A few words about myself](#few_words)
 * [General description](#description)
 * [Users](#users)
-* [Orders](#orders)
+* [Manufacturing process states](#states)
+* [Route maps](#route_maps)
 * [In perspective](#perspective)
 
 ### A few words about myself<a name="few_words"></a> 
@@ -107,7 +108,20 @@ I work as the head of the technical control department for a private company tha
   Functionality:
      * View, add, change users
      * View, add, change products
- 
+
+### Manufacturing process states<a name="states"></a>
+The system allows monitoring the stages of product manufacturing. For this, a progress bar has been introduced, as well as the "Process status" field. Each state has its own color.
+<p align="center">
+  <img src="./img/states.jpg" alt="Size Limit CLI" width="510">
+</p>
+
+### Route maps<a name="route_maps"></a> 
+The route map (hereinafter-MK) is one of the mandatory technological documents. MK contains a description of the sequence of technological operations. In our company, this technology works on a formal level (see the picture below).
+<p align="center">
+  <img src="./img/routeMap.jpg" alt="Size Limit CLI" width="510">
+</p>
+In this project, an improved MC concept was implemented, which ensures the traceability of all operations in production and participates in the preparation of monitoring.
+
 ### In perspective<a name="perspective"></a> 
  There is a fleet of measuring instruments at the production site, they allow you to quickly carry out measurements in an automatic mode, and also provide the convenience of operation and data transmission via wireless communication channels. The measurement results, which are carried out at high frequency, are transmitted over the network directly to the production line in the workshop - be it 100% inspection or sampling. It is planned to integrate all measuring instruments into one system for quick reading of an array of measurement data.
     
