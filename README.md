@@ -111,9 +111,7 @@ I work as the head of the technical control department for a private company tha
 
 ### Manufacturing process states<a name="states"></a>
 The system allows monitoring the stages of product manufacturing. For this, a progress bar has been introduced, as well as the "Process status" field. Each state has its own color.
-<p align="center">
-  <img src="./img/states.jpg" alt="Size Limit CLI" width="510">
-</p>
+
 
 ### Route maps<a name="route_maps"></a> 
 The route map (hereinafter-MK) is one of the mandatory technological documents. MK contains a description of the sequence of technological operations. In our company, this technology works on a formal level (see the picture below).
