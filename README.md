@@ -21,7 +21,7 @@
   Функциональные возможности:
     * Просмотр домашней страницы
     * Смена языка сайта
-    * Авторизация/Регистрация
+    * Регистрация и аутентификация
   
 * **Рабочий**  
   Зарегистрированный рабочий в системе. Статус присваивается по умолчанию после регистрации.
@@ -66,18 +66,18 @@ I work as the head of the technical control department for a private company tha
     
   Functionality:
      * View home page
-     * View current flights
-     * View the airports to which there are flights
-     * View aircraft fleet
+     * Change site language
+     * Registration and Authentication
   
 * **Worker**  
   The registered worker in the system. The status is assigned by default after registration.
   
   Functionality:
      * View home page
-     * View current flights
-     * View the airports to which there are flights
-     * View aircraft fleet
+     * Change site language
+     * Product search
+     * Create a mark in the route map
+     * View profile
     
     
 * **Admin**  
