@@ -24,7 +24,7 @@
 * на складе готовой продукции.
 
 <p align="center">
-  <img src="./img/example.png" alt="Size Limit CLI" width="738">
+  <img src="./img/states.png" alt="Size Limit CLI" width="738">
 </p>
 
 ### Пользователи<a name="пользователи"></a> 
