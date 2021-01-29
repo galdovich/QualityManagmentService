@@ -40,7 +40,7 @@ public class RegisterCommand implements ActionCommand {
         requestData.put(DEPARTMENT, request.getParameter(DEPARTMENT));
         Router router;
         try {
-            if (USER_SERVICE.findByLogin(request.getParameter(LOGIN)) == null) {
+            if (!USER_SERVICE.findByLogin(request.getParameter(LOGIN)).isPresent()) {
                 if (USER_SERVICE.add(requestData)) {
                     request.setAttribute(AttributeKey.USER_SUCCESS_ADD, true);
                     MailUtil.getInstance().sendMessage((String) session.getAttribute(AttributeKey.LOCALE),

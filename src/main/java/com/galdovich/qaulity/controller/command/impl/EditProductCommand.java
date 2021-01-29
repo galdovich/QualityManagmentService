@@ -39,7 +39,7 @@ public class EditProductCommand implements ActionCommand {
         editData.put(ParameterKey.PRODUCT_PRIORITY, request.getParameter(ParameterKey.PRODUCT_PRIORITY));
         int productId = (int) session.getAttribute(AttributeKey.PRODUCT_ID);
         try {
-            Product product = PRODUCT_SERVICE.findById(productId);
+            Product product = PRODUCT_SERVICE.findById(productId).get();
             if (!isSameData(editData, product)) {
                 if (PRODUCT_SERVICE.update(editData, productId)) {
                     request.setAttribute(AttributeKey.PRODUCT_SUCCESS_ADDING, true);

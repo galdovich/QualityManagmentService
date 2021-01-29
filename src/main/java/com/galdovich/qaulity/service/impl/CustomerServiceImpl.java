@@ -10,6 +10,7 @@ import com.galdovich.qaulity.service.CustomerService;
 import com.galdovich.qaulity.service.ServiceException;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * The class represents customer service implementation.
@@ -43,8 +44,8 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Customer findById(String id) throws ServiceException {
-        Customer customer;
+    public Optional<Customer> findById(String id) throws ServiceException {
+        Optional<Customer> customer;
         try {
             customer = CUSTOMER_DAO.findById(id);
         } catch (DAOException exc) {

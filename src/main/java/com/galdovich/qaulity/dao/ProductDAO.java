@@ -4,6 +4,7 @@ import com.galdovich.qaulity.entity.Product;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * The interface represents product dao. Defines specific methods which interactions with Product entities in database.
@@ -28,7 +29,7 @@ public interface ProductDAO {
      * @return the product instance if searches were successful, otherwise null
      * @throws DAOException the dao exception
      */
-    Product findById(int id) throws DAOException;
+    Optional<Product> findById(int id) throws DAOException;
 
     /**
      * Find product id by decimal number.

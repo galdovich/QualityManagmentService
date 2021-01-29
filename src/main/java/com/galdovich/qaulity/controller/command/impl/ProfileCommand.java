@@ -30,8 +30,8 @@ public class ProfileCommand implements ActionCommand {
         HttpSession session = request.getSession();
         Router router;
         try {
-            User user = (id != null) ? USER_SERVICE.findById(Integer.valueOf(id)) :
-                    USER_SERVICE.findById((Integer) session.getAttribute(AttributeKey.USER_ID));
+            User user = (id != null) ? USER_SERVICE.findById(Integer.valueOf(id)).get() :
+                    USER_SERVICE.findById((Integer) session.getAttribute(AttributeKey.USER_ID)).get();
             session.setAttribute(AttributeKey.USER_NAME, user.getName());
             session.setAttribute(AttributeKey.USER_LOGIN, user.getLogin());
             session.setAttribute(AttributeKey.USER_EMAIL, user.getEmail());

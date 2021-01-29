@@ -6,6 +6,7 @@ import com.galdovich.qaulity.util.UploadType;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * The interface represents product service.
@@ -29,7 +30,7 @@ public interface ProductService {
      * @return the product instance if searches were successful, otherwise null
      * @throws ServiceException the service exception
      */
-    Product findById(int id) throws ServiceException;
+    Optional<Product> findById(int id) throws ServiceException;
 
     /**
      * Find product id by decimal number.

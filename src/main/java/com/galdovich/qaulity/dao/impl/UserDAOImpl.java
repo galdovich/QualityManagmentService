@@ -1,10 +1,10 @@
 package com.galdovich.qaulity.dao.impl;
 
+import com.galdovich.qaulity.dao.DAOException;
+import com.galdovich.qaulity.dao.UserDAO;
 import com.galdovich.qaulity.dao.pool.ConnectionPool;
 import com.galdovich.qaulity.dao.util.ColumnName;
 import com.galdovich.qaulity.dao.util.DAOQuery;
-import com.galdovich.qaulity.dao.UserDAO;
-import com.galdovich.qaulity.dao.DAOException;
 import com.galdovich.qaulity.entity.Department;
 import com.galdovich.qaulity.entity.Role;
 import com.galdovich.qaulity.entity.User;
@@ -12,6 +12,7 @@ import com.galdovich.qaulity.entity.User;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * The type User dao.
@@ -45,17 +46,19 @@ public class UserDAOImpl implements UserDAO {
         return result;
     }
 
-    public User findById(int id) throws DAOException {
+    public Optional<User> findById(int id) throws DAOException {
         Connection connection = pool.getConnection();
         PreparedStatement statement = null;
         ResultSet resultSet = null;
-        User user = null;
+        Optional<User> user;
         try {
             statement = connection.prepareStatement(DAOQuery.USER_FIND_BY_ID);
             statement.setInt(1, id);
             resultSet = statement.executeQuery();
-            while (resultSet.next()) {
-                user = createUser(resultSet);
+            if(resultSet.next()) {
+                user = Optional.of(createUser(resultSet));
+            }else {
+                user = Optional.empty();
             }
         } catch (SQLException exc) {
             throw new DAOException("SQL Exception ", exc);
@@ -67,17 +70,19 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public User findByLogin(String login) throws DAOException {
+    public Optional<User> findByLogin(String login) throws DAOException {
         Connection connection = pool.getConnection();
         PreparedStatement statement = null;
         ResultSet resultSet = null;
-        User user = null;
+        Optional<User> user;
         try {
             statement = connection.prepareStatement(DAOQuery.USER_FIND_BY_LOGIN);
             statement.setString(1, login);
             resultSet = statement.executeQuery();
-            while (resultSet.next()) {
-                user = createUser(resultSet);
+            if (resultSet.next()) {
+                user = Optional.of(createUser(resultSet));
+            } else {
+                user = Optional.empty();
             }
         } catch (SQLException exc) {
             throw new DAOException("SQL Exception ", exc);
@@ -89,18 +94,20 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public User singIn(String login, String password) throws DAOException {
+    public Optional<User> singIn(String login, String password) throws DAOException {
         Connection connection = pool.getConnection();
         PreparedStatement statement = null;
         ResultSet resultSet = null;
-        User user = null;
+        Optional<User> user;
         try {
             statement = connection.prepareStatement(DAOQuery.USER_FIND_BY_LOGIN_PASSWORD);
             statement.setString(1, login);
             statement.setString(2, password);
             resultSet = statement.executeQuery();
-            while (resultSet.next()) {
-                user = createUser(resultSet);
+            if(resultSet.next()) {
+                user = Optional.of(createUser(resultSet));
+            }else {
+                user = Optional.empty();
             }
         } catch (SQLException exc) {
             throw new DAOException("SQL Exception ", exc);

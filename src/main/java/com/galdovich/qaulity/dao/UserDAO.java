@@ -3,6 +3,7 @@ package com.galdovich.qaulity.dao;
 import com.galdovich.qaulity.entity.User;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * The interface represents user dao. Defines specific methods which interactions with User entities in database.
@@ -27,7 +28,7 @@ public interface UserDAO {
      * @return the user instance if searches were successful, otherwise null
      * @throws DAOException the dao exception
      */
-    User findById(int id) throws DAOException;
+    Optional<User> findById(int id) throws DAOException;
 
     /**
      * Find user by login.
@@ -36,7 +37,7 @@ public interface UserDAO {
      * @return the user instance if searches were successful, otherwise null
      * @throws DAOException the dao exception
      */
-    User findByLogin(String login) throws DAOException;
+    Optional<User> findByLogin(String login) throws DAOException;
 
     /**
      * Find user password by user login.
@@ -67,7 +68,7 @@ public interface UserDAO {
      * @return the user instance if searches were successful, otherwise null
      * @throws DAOException the dao exception
      */
-    User singIn(String login, String password) throws DAOException;
+    Optional<User> singIn(String login, String password) throws DAOException;
 
     /**
      * Add new user. Password should be coded.

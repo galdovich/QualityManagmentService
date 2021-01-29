@@ -10,6 +10,7 @@ import com.galdovich.qaulity.entity.Customer;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * The type Customer dao.
@@ -44,17 +45,19 @@ public class CustomerDAOImpl implements CustomerDAO {
     }
 
     @Override
-    public Customer findById(String id) throws DAOException {
+    public Optional<Customer> findById(String id) throws DAOException {
         Connection connection = pool.getConnection();
-        Customer result = null;
+        Optional<Customer> customer;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
             statement = connection.prepareStatement(DAOQuery.CUSTOMER_FIND_BY_ID);
             statement.setString(1, id);
             resultSet = statement.executeQuery();
-            while (resultSet.next()) {
-                result = CustomBuilder.createCustomer(resultSet);
+            if(resultSet.next()) {
+                customer = Optional.of(CustomBuilder.createCustomer(resultSet));
+            }else {
+                customer = Optional.empty();
             }
         } catch (SQLException exc) {
             throw new DAOException("Error while finding customer by id", exc);
@@ -62,7 +65,7 @@ public class CustomerDAOImpl implements CustomerDAO {
             ConnectionPool.getInstance().releaseResources(resultSet, statement);
             ConnectionPool.getInstance().releaseConnection(connection);
         }
-        return result;
+        return customer;
     }
 
     @Override

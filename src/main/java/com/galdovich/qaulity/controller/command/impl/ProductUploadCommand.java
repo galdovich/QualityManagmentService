@@ -41,7 +41,7 @@ public class ProductUploadCommand implements ActionCommand {
         session.removeAttribute(MODEL_UPLOAD);
         Router router;
         try {
-            Product product = PRODUCT_SERVICE.findById((int) session.getAttribute(AttributeKey.PRODUCT_ID));
+            Product product = PRODUCT_SERVICE.findById((int) session.getAttribute(AttributeKey.PRODUCT_ID)).get();
             if (PRODUCT_SERVICE.update(requestData, product)) {
                 request.setAttribute(PRODUCT_NAME, product.getFullName());
                 request.setAttribute(CUSTOMER_NAME, product.getOrder().getCustomer().getName());

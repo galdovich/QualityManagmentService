@@ -39,7 +39,7 @@ public class UpdateProductRMCommand implements ActionCommand {
 
         try {
             PRODUCT_SERVICE.update(id, name, date, comment);
-            Product product = PRODUCT_SERVICE.findById(id);
+            Product product = PRODUCT_SERVICE.findById(id).get();
             request.setAttribute(PRODUCT_NAME, product.getFullName());
             request.setAttribute(CUSTOMER_NAME, product.getOrder().getCustomer().getName());
             request.setAttribute(ORDER_NAME, product.getOrder().getName());

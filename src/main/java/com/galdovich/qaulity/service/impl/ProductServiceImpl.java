@@ -17,6 +17,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 
 import static com.galdovich.qaulity.util.ParameterKey.*;
 
@@ -44,8 +45,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product findById(int id) throws ServiceException {
-        Product product;
+    public Optional<Product> findById(int id) throws ServiceException {
+        Optional<Product> product;
         try {
             product = PRODUCT_DAO.findById(id);
         } catch (DAOException exc) {
@@ -103,7 +104,7 @@ public class ProductServiceImpl implements ProductService {
     public boolean update(int id, String name, Date date, String comment) throws ServiceException {
         boolean result;
         try {
-            Map<RouteMap, Production> map = PRODUCT_DAO.findById(id).getProductionMap();
+            Map<RouteMap, Production> map = PRODUCT_DAO.findById(id).get().getProductionMap();
             int queue = (int) map.values().stream().filter(Objects::nonNull).count() + 1;
             result = PRODUCT_DAO.update(id, queue, name, date, comment);
         } catch (DAOException exc) {
@@ -119,7 +120,7 @@ public class ProductServiceImpl implements ProductService {
             List<Customer> customerList = CUSTOMER_DAO.findAll();
             List<Order> orderList = ORDER_DAO.findAll();
             if (ProductValidator.validateRequestData(editData, customerList, orderList)) {
-                Product product = PRODUCT_DAO.findById(id);
+                Product product = PRODUCT_DAO.findById(id).get();
                 updateFullProduct(editData, product);
                 result = PRODUCT_DAO.update(product);
             }

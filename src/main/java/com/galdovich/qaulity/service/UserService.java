@@ -4,6 +4,7 @@ import com.galdovich.qaulity.entity.User;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * The interface represents user service.
@@ -28,7 +29,7 @@ public interface UserService {
      * @return the user
      * @throws ServiceException the service exception
      */
-    User findById(int id) throws ServiceException;
+    Optional<User> findById(int id) throws ServiceException;
 
     /**
      * Find user by login.
@@ -37,7 +38,7 @@ public interface UserService {
      * @return the user
      * @throws ServiceException the service exception
      */
-    User findByLogin(String login) throws ServiceException;
+    Optional<User> findByLogin(String login) throws ServiceException;
 
     /**
      * Checking if a user exists.

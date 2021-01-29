@@ -3,6 +3,7 @@ package com.galdovich.qaulity.dao;
 import com.galdovich.qaulity.entity.Customer;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * The interface represents customer dao. Defines specific methods which interactions with Customer entities in database.
@@ -27,7 +28,7 @@ public interface CustomerDAO {
      * @return the customer instance if searches were successful, otherwise null
      * @throws DAOException the dao exception
      */
-    Customer findById(String id) throws DAOException;
+    Optional<Customer> findById(String id) throws DAOException;
 
     /**
      * Add new customer to database

@@ -38,14 +38,14 @@ public class EditProfileCommand implements ActionCommand {
         int id = (int) session.getAttribute(AttributeKey.USER_ID);
         Router router;
         try {
-            User user = USER_SERVICE.findById(id);
+            User user = USER_SERVICE.findById(id).get();
             if (!isSameData(editData, user)) {
                 if (USER_SERVICE.update(editData, id)) {
                     request.setAttribute(AttributeKey.PROFILE_VALID_MESSAGE, true);
                 } else {
                     request.setAttribute(AttributeKey.USER_EDIT_MAP, editData);
                 }
-                User editUser = USER_SERVICE.findById(id);
+                User editUser = USER_SERVICE.findById(id).get();
                 request.setAttribute(AttributeKey.USER_LOGIN, editUser.getLogin());
                 request.setAttribute(AttributeKey.USER_NAME, editUser.getName());
                 request.setAttribute(AttributeKey.USER_EMAIL, editUser.getEmail());

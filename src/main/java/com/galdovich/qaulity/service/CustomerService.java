@@ -4,6 +4,7 @@ import com.galdovich.qaulity.entity.Customer;
 import com.galdovich.qaulity.entity.Order;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * The interface represents customer service.
@@ -36,7 +37,7 @@ public interface CustomerService {
      * @return the customer instance if searches were successful, otherwise null
      * @throws ServiceException the service exception
      */
-    Customer findById(String id) throws ServiceException;
+    Optional<Customer> findById(String id) throws ServiceException;
 
     /**
      * Add new customer

@@ -13,6 +13,7 @@ import com.galdovich.qaulity.util.CustomEncoding;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import static com.galdovich.qaulity.util.ParameterKey.*;
 
@@ -40,8 +41,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findById(int id) throws ServiceException {
-        User user;
+    public Optional<User> findById(int id) throws ServiceException {
+        Optional<User> user;
         try {
             user = USER_DAO.findById(id);
         } catch (DAOException exc) {
@@ -53,28 +54,28 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean logIn(String login, String password) throws ServiceException {
         boolean result = false;
-        if (UserValidator.isLoginValid(login)) {
-            try {
-                if ((USER_DAO.findByLogin(login) != null)) {
-                    String encPass = CustomEncoding.encodePassword(password);
-                    result = encPass.equals(USER_DAO.findPasswordByLogin(login));
-                }
-            } catch (DAOException exc) {
-                throw new ServiceException("Error while finding user by login", exc);
+        try {
+            if (UserValidator.isLoginValid(login) && USER_DAO.findByLogin(login).isPresent()) {
+                String encPass = CustomEncoding.encodePassword(password);
+                result = encPass.equals(USER_DAO.findPasswordByLogin(login));
             }
+        } catch (DAOException exc) {
+            throw new ServiceException("Error while finding user by login", exc);
         }
         return result;
     }
 
     @Override
-    public User findByLogin(String login) throws ServiceException {
-        User user = null;
-        if (UserValidator.isLoginValid(login)) {
-            try {
+    public Optional<User> findByLogin(String login) throws ServiceException {
+        Optional<User> user;
+        try {
+            if (UserValidator.isLoginValid(login)) {
                 user = USER_DAO.findByLogin(login);
-            } catch (DAOException exc) {
-                throw new ServiceException("Error while finding user by login", exc);
+            } else {
+                user = Optional.empty();
             }
+        } catch (DAOException exc) {
+            throw new ServiceException("Error while finding user by login", exc);
         }
         return user;
     }

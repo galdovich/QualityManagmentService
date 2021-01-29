@@ -35,7 +35,7 @@ public class LoginCommand implements ActionCommand {
         Router router;
         try {
             if (USER_SERVICE.logIn(login, password)) {
-                User user = USER_SERVICE.findByLogin(login);
+                User user = USER_SERVICE.findByLogin(login).get();
                 session.setAttribute(AttributeKey.USER_ID, user.getId());
                 session.setAttribute(AttributeKey.USER_NAME, user.getName());
                 session.setAttribute(AttributeKey.USER_ROLE, user.getRole().name());

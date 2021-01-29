@@ -32,7 +32,7 @@ public class ProductCommand implements ActionCommand {
         HttpSession session = request.getSession();
         Router router;
         try {
-            Product product = PRODUCT_SERVICE.findById(Integer.valueOf(request.getParameter(PRODUCT_ID)));
+            Product product = PRODUCT_SERVICE.findById(Integer.valueOf(request.getParameter(PRODUCT_ID))).get();
             session.setAttribute(PRODUCT_ID, product.getId());
             request.setAttribute(PRODUCT_NAME, product.getFullName());
             request.setAttribute(CUSTOMER_NAME, product.getOrder().getCustomer().getName());

@@ -12,6 +12,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import static com.galdovich.qaulity.controller.command.AttributeKey.*;
 
@@ -27,12 +28,13 @@ public class ClientProductCommand implements ActionCommand {
 
     @Override
     public Router execute(HttpServletRequest request) {
+        HttpSession session = request.getSession();
         String decimalNumber = request.getParameter(ParameterKey.PRODUCT_DECIMAL);
         Router router;
         try {
             if (PRODUCT_SERVICE.findIdByDecimal(decimalNumber) != null) {
-                Product product = PRODUCT_SERVICE.findById(PRODUCT_SERVICE.findIdByDecimal(decimalNumber));
-                request.setAttribute(PRODUCT_ID, product.getId());
+                Product product = PRODUCT_SERVICE.findById(PRODUCT_SERVICE.findIdByDecimal(decimalNumber)).get();
+                session.setAttribute(PRODUCT_ID, product.getId());
                 request.setAttribute(PRODUCT_NAME, product.getFullName());
                 request.setAttribute(CUSTOMER_NAME, product.getOrder().getCustomer().getName());
                 request.setAttribute(ORDER_NAME, product.getOrder().getName());

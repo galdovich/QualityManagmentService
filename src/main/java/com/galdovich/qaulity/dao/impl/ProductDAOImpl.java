@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.Optional;
 
 /**
  * The type Product dao.
@@ -51,11 +52,11 @@ public class ProductDAOImpl implements ProductDAO {
         return result;
     }
 
-    public Product findById(int id) throws DAOException {
+    public Optional<Product> findById(int id) throws DAOException {
         Connection connection = pool.getConnection();
-        Product product;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
+        Product product;
         try {
             statement = connection.prepareStatement(DAOQuery.PRODUCT_FIND_BY_ID, ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY);
@@ -70,12 +71,12 @@ public class ProductDAOImpl implements ProductDAO {
             ConnectionPool.getInstance().releaseResources(resultSet, statement);
             ConnectionPool.getInstance().releaseConnection(connection);
         }
-        return product;
+        return Optional.of(product);
     }
 
     @Override
     public boolean add(Product product) throws DAOException {
-        boolean result = false;
+        boolean result;
         Connection connection = pool.getConnection();
         PreparedStatement statement = null;
         ResultSet resultSet = null;
