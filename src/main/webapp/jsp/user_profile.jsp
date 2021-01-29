@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}css/custom.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/custom.css">
 
     <title><fmt:message key="title.profile"/></title>
 </head>
@@ -196,7 +196,7 @@
 
                                 <hr>
                                 <c:if test="${user_role == 'ADMIN'}">
-                                    <div class="col-md-5 text-center">
+                                    <div class="col-md-12 text-center">
                                         <button type="submit" class="btn btn-sm btn-primary"><fmt:message
                                                 key="profile.save.button"/></button>
                                     </div>
